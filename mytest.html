@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	
+	<script>
+		function deFact (el) {
+			var arr =[];
+			var num = parseInt(el);
+			var numStr = num+'';
+			var amo = Math.ceil(num/2);
+			console.log(numStr.length);
+			if (el.length - numStr.length ===2) {
+				
+				for(var i = 0; i< amo; i++) {
+					arr[i] = num;
+					num-=2;
+				}
+			}else {
+				
+			}
+			console.log(arr);
+		}
+		deFact('11!!');
+	</script>
+</body>
+</html>

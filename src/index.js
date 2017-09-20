@@ -16,3 +16,21 @@ function doubleFactorial(num) {
     return num === 2 ? num : num * doubleFactorial(num-2)
   }
 }
+function deFact (el) {
+	var arr =[];
+	var num = parseInt(el);
+	var numStr = num+'';
+	var amo = Math.ceil(num/2);
+	console.log(numStr.length);
+	if (el.length - numStr.length ===2) {
+
+		for(var i = 0; i< amo; i++) {
+			arr[i] = num;
+			num-=2;
+		}
+	}else {
+
+	}
+	console.log(arr);
+}
+
