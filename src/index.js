@@ -1,7 +1,9 @@
 module.exports = function zeros(expression) {
   expression = '';
-  console.log('aa',factorial(95)*factorial(95)*factorial(95)*factorial(95));
+  return console.log('aa',factorial(95)*factorial(95));
 }
+// 10 gives 1 zero
+// 5 * 2 also gives one zero
 
 function factorial(num) {
   return num === 1 ? num : num*factorial(num-1);
