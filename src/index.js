@@ -4,6 +4,7 @@ module.exports = function zeros(expression) {
 }
 // 10 gives 1 zero
 // 5 * 2 also gives one zero
+// res == num of *5 if there is enough even
 
 function factorial(num) {
   return num === 1 ? num : num*factorial(num-1);

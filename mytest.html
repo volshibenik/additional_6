@@ -17,15 +17,39 @@
 			if (el.length - numStr.length ===2) {
 				
 				for(var i = 0; i< amo; i++) {
+          
 					arr[i] = num;
 					num-=2;
+          
 				}
-			}else {
-				
+        
+			}else if(el.length - numStr.length ===1){
+        
+				for(var i = 0; i< parseInt(el); i++) {
+          
+					arr[i] = num;
+					num-=1;
+          
+				}
+        
 			}
 			console.log(arr);
+      fivesAmount(arr)
+      return arr;
 		}
-		deFact('11!!');
+    function fivesAmount (arr) {
+      return arr.reduce(function(acc, item) {
+        if (item === 25 && item === 75 && item === 50) {
+          acc+=2;
+        } else if (item % 5 ===0) {
+          acc +=1;
+        }
+        
+        return acc;
+      },0)
+    }
+    
+		deFact('12!');
 	</script>
 </body>
 </html>
