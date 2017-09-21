@@ -13,7 +13,7 @@
 			var num = parseInt(el);
 			var numStr = num+'';
 			var amo = Math.ceil(num/2);
-			console.log(numStr.length);
+
 			if (el.length - numStr.length ===2) {
 				
 				for(var i = 0; i< amo; i++) {
@@ -33,23 +33,63 @@
 				}
         
 			}
-			console.log(arr);
-      fivesAmount(arr)
-      return arr;
+			
+			return arr
+			
 		}
+		
     function fivesAmount (arr) {
-      return arr.reduce(function(acc, item) {
-        if (item === 25 && item === 75 && item === 50) {
-          acc+=2;
-        } else if (item % 5 ===0) {
-          acc +=1;
-        }
-        
-        return acc;
+			var newArr;
+      return newArr = arr.reduce(function(acc, item) {
+				
+				if (item % 5 === 0) {
+					if (item/5 % 5 === 0) {
+						acc+=2;
+					}else {acc+=1}
+				}
+				
+				return acc;
+				
       },0)
     }
-    
-		deFact('12!');
+		
+    function deucesAmount (arr, criticalQty) {
+			var newArr;
+			return newArr = arr.reduce(function(acc, item) {
+				if (acc >= criticalQty) {
+					return acc;
+				}
+				if (item % 2 === 0) {
+					if (item/2 % 2 === 0) {
+						acc+=2;
+					}else if (item/4 % 2 === 0) {
+						acc+=3;
+					}else {acc+=1}
+				}
+				return acc;
+
+			},0)
+		}
+		
+	
+		function main (str) {
+			var qty5 = 0;
+			var qty2 = 0;
+			var arr = str.split('*');
+			for (var i = 0; i < arr.length; i++) {
+				
+				qty5 += fivesAmount(deFact(arr[i]));
+				
+			}
+			for (var i = 0; i < arr.length; i++) {
+
+				qty2 += deucesAmount(deFact(arr[i]), qty5)
+
+			}
+			
+			return qty5 <= qty2 ? qty5 : 0;
+		}
+		main('11!!*22!!*33!!');
 	</script>
 </body>
 </html>
